@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8-Bit Shadow Maze</title>
+    <style>
+        body {
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Press Start 2P', cursive;
+        }
+        #game-container {
+            border: 4px solid #fff;
+            background: #333;
+            padding: 10px;
+            image-rendering: pixelated;
+        }
+        #maze {
+            width: 320px;
+            height: 320px;
+            background: #000;
+            position: relative;
+        }
+        .wall {
+            background: #555;
+            position: absolute;
+            width: 32px;
+            height: 32px;
+        }
+        #player {
+            width: 32px;
+            height: 32px;
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAJBJREFUWEftl0EOwCAIQ+0x///LXkOEkM3u4QIJIQr3Zna7mQAR2gE4AMeAJ4A74CvgH3AKeAHeAf8AfwH/gC+Aa8Af4B/wD/gG/AP+AX8B34B/wD/gH/AP+Af8A/4B/wD/gH/AP+Af8A/4B/wD/gH/AP+Af8A/4B/wD/gH/AP+Af8A/4B/wD/gH/AP+AfcA/aW5iW4oF6wAAAABJRU5ErkJggg==');
+            position: absolute;
+        }
+        #goal {
+            width: 32px;
+            height: 32px;
+            background: #ff0;
+            position: absolute;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P" rel="stylesheet">
+</head>
+<body>
+    <div id="game-container">
+        <div id="maze"></div>
+    </div>
+    <script src="maze.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+const maze = document.getElementById('maze');
+const tileSize = 32;
+const mazeSize = 10;
+
+// Maze layout (1 = wall, 0 = path)
+const mazeLayout = [
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+    [1, 0, 0, 0, 1, 0, 1, 0, 0, 1],
+    [1, 1, 1, 0, 1, 0, 1, 0, 1, 1],
+    [1, 0, 0, 0, 0, 0, 1, 0, 0, 1],
+    [1, 0, 1, 1, 1, 0, 1, 1, 0, 1],
+    [1, 0, 0, 0, 1, 0, 0, 0, 0, 1],
+    [1, 1, 1, 0, 1, 1, 1, 1, 0, 1],
+    [1, 0, 1, 0, 0, 0, 0, 1, 0, 1],
+    [1, 0, 0, 0, 1, 1, 0, 0, 0, 1],
+    [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+];
+
+let playerX = 1;
+let playerY = 1;
+const goalX = 8;
+const goalY = 8;
+
+// Build maze
+for (let y = 0; y < mazeSize; y++) {
+    for (let x = 0; x < mazeSize; x++) {
+        if (mazeLayout[y][x] === 1) {
+            const wall = document.createElement('div');
+            wall.className = 'wall';
+            wall.style.left = `${x * tileSize}px`;
+            wall.style.top = `${y * tileSize}px`;
+            maze.appendChild(wall);
+        }
+    }
+}
+
+const player = document.createElement('div');
+player.id = 'player';
+player.style.left = `${playerX * tileSize}px`;
+player.style.top = `${playerY * tileSize}px`;
+maze.appendChild(player);
+
+const goal = document.createElement('div');
+goal.id = 'goal';
+goal.style.left = `${goalX * tileSize}px`;
+goal.style.top = `${goalY * tileSize}px`;
+maze.appendChild(goal);
+
+// Movement
+document.addEventListener('keydown', (e) => {
+    let newX = playerX;
+    let newY = playerY;
+    switch (e.key) {
+        case 'ArrowUp': newY--; break;
+        case 'ArrowDown': newY++; break;
+        case 'ArrowLeft': newX--; break;
+        case 'ArrowRight': newX++; break;
+    }
+    if (isValidMove(newX, newY)) {
+        playerX = newX;
+        playerY = newY;
+        player.style.left = `${playerX * tileSize}px`;
+        player.style.top = `${playerY * tileSize}px`;
+        checkGoal();
+    }
+});
+
+function isValidMove(x, y) {
+    return x >= 0 && x < mazeSize && y >= 0 && y < mazeSize && mazeLayout[y][x] === 0;
+}
+
+function checkGoal() {
+    if (playerX === goalX && playerY === goalY) {
+        rabbitHole();
+    }
+}
+
+// Rabbit hole ending
+function rabbitHole() {
+    const shadow = maze.attachShadow({ mode: 'closed' });
+    shadow.innerHTML = `
+        <div style="color: #f00; font-size: 16px; position: absolute; top: 340px; left: 10px;">
+            Nice try, but the void laughs!
+        </div>
+    `;
+}
+
+function secret() {
+  const flg = CSC25{s1mple_js_ObfusCation};
+}
+

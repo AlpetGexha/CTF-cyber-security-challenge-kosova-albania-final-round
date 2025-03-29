@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: 8bit-shadow-maze
+    ports:
+      - "80:80"
+    restart: unless-stopped
