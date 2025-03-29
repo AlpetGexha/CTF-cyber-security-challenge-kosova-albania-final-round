@@ -1,7 +1,5 @@
 # Illusion
 
-### Description
-
 300 points
 
 Maybe it is not what it seems. Not as easy but not as hard.

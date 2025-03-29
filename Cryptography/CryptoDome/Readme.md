@@ -1,7 +1,5 @@
 # CryptoDome
 
-### Description
-
 300 points
 
 The bank is using a strong encryption mechanism. Try to break the logic of the new encryption.

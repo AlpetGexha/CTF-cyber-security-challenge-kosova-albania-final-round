@@ -1,6 +1,5 @@
 # Maze 
 
-### Description
 150 points
 
 The truth lies not in victory, but in the echoes left behind.

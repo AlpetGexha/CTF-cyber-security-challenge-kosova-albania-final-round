@@ -1,5 +1,7 @@
 # XOR Shifter
 
+150 points
+
 Another XOR encryption maybe? Looking for a key? Nice try!
 
 We need to decrypt the given hex string using a key generated from a random seed. The key is generated using the same seed as the one used for encryption, so we can replicate the key generation process.

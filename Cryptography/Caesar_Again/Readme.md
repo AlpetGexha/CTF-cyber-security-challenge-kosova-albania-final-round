@@ -1,7 +1,5 @@
 # Cesar Again
 
-### Description
-
 150 points
 ...
 
